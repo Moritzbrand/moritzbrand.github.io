@@ -1,0 +1,11 @@
+/* colors.css */
+
+:root {
+    --color_bg: #0c1119;
+    --color_surface: #162549;
+    --color_text: #ffffff;
+    --color_primary: #4f8cff;
+    --color_hover: #3a6ed6;
+    --color_border: #2d2d2d;
+    --color_highlight: #ff9422;
+}

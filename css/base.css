@@ -1,0 +1,9 @@
+/* base.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color_bg);
+    color: var(--color_text);
+    overflow-x: hidden;
+}
