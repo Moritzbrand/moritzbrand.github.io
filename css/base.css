@@ -1,7 +1,10 @@
- body {
-            margin: 0;
+:root {
+        --footer_height: 2.5cm;
+    }
+ 
+body {
+        margin: 0;
+        color: var(--color_text);
+        font-family: Arial, sans-serif;
             
-            color: var(--color_text);
-            font-family: Arial, sans-serif;
-            
-        }
+    }

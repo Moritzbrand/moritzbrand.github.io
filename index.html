@@ -23,8 +23,10 @@
        
         .page {
             padding-top: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 0px;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             background: linear-gradient(to bottom left, var(--color_bg)50%, var(--color_primary) 200%);
         }
 
@@ -48,7 +50,18 @@
             display: block;
             height: 240px;
             background-color: transparent;
-            padding-bottom: 1cm;
+            padding-bottom: 2cm;
+        }
+
+        .footer-frame {
+            margin-top: auto;
+            padding: 0;
+            width: 100%;
+            border: none;
+            display: block;
+            height: var(--footer_height);
+            background-color: transparent;
+            flex-shrink: 0;
         }
 
         @media (max-width: 800px) {
@@ -71,6 +84,9 @@
 
         <iframe class="nav-frame" src="nav.html" title="Navigation"></iframe>
         <iframe class="profile-frame" src="profile.html" title="Navigation"></iframe>
+
+        <iframe class="footer-frame" src="footer.html" title="Footer"></iframe>
+        
     </div>
     <script src="js/change_language.js"></script>
     <script>
