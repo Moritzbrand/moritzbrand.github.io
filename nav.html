@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <style>
+        body {
+            margin: 0;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .nav-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .nav-bar {
+            background-color: var(--color_surface);
+            border-radius: 999px 0 0 999px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: calc(100vw - 6cm);
+            min-height: 110px;
+            box-sizing: border-box;
+            padding: 0 30px;
+        }
+
+        .nav-link {
+            color: var(--color_text);
+            text-decoration: none;
+            font-size: 36px;
+        }
+
+        .nav-link:hover {
+            color: var(--color_highlight);
+        }
+
+        @media (max-width: 800px) {
+            .nav-wrapper {
+                padding-top: 0;
+                
+            }
+
+            .nav-bar {
+                background-color: transparent;
+                width: 100%;
+                max-width: 100%;
+                min-height: auto;
+                padding: 0 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                border-radius: 0;
+            }
+
+            .nav-link {
+                display: block;
+                width: 100%;
+                max-width: 520px;
+                text-align: center;
+                background-color: var(--color_surface);
+                border-radius: 999px;
+                padding: 26px 20px;
+                box-sizing: border-box;
+                font-size: 36px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="nav-bar">
+            <a class="nav-link" href="code.html" target="_parent">Code</a>
+            <a class="nav-link" href="3d.html" target="_parent">3D-Art</a>
+            <a class="nav-link" href="about.html" target="_parent">About Me</a>
+        </nav>
+    </div>
+</body>
+</html>

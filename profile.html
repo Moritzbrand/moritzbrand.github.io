@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <style>
+
+        :root {
+            --profile-size: 200px;
+            --min-text-width: 100px;
+        }
+        body {
+            margin: 0;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            color: var(--color_text);
+        }
+
+        .profile-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .profile-bar {
+            background-color: var(--color_surface);
+            border-radius: 0 999px 999px 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: calc(80vw);
+            min-width: calc(var(--min-text-width) + var(--profile-size));
+            min-height: var(--profile-size);
+            box-sizing: border-box;
+    
+        }
+
+        .text {
+            width: calc(1cm+20vw);
+            min-width: var(--min-text-width);
+            margin-left: 20px;
+
+        }
+
+        .text > h1 {
+            margin: 0;
+            font-size: calc(32px + 2vw);
+            font-weight: normal;
+            /*bold*/
+            font-weight: 600;
+        }
+
+        .text > p {
+            margin: 0;
+            width: calc(1cm + 20vw);
+            font-size: calc(12px + 1.2vw);
+        }
+
+        .image-container {
+            background-color: var(--color_s);
+            width: var(--profile-size);
+            min-width: var(--profile-size);
+            height: var(--profile-size);
+            border-radius: 999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .image-container > img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 999px;
+            background-color: var(--color_highlight);
+        }    
+    </style>
+</head>
+<body>
+    <div class="profile-wrapper">
+        <div class="profile-bar">
+            <div class="text">
+                <h1>Moritz Brand</h1>
+                <p>Informatics Student with a passion for 3D Art</p>
+            </div>
+            <div class="image-container">   
+                <img src="images/profile.png" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
