@@ -1,0 +1,76 @@
+<!-- header.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .page {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .flags {
+            display: flex;
+            justify-content: center;
+            gap: 0.2cm;
+            padding-right: 5vw;
+        }
+
+        .flag-wrapper {
+            position: relative;
+            width: 0.7cm;
+            height: 0.5cm;
+            padding: 0.4cm;
+            box-sizing: content-box;
+        }
+
+        .flag-button {
+            width: 150%;
+            height: 100%;
+            padding: 0;
+            border: none;
+            background: transparent;
+            appearance: none;
+            cursor: pointer;
+            display: block;
+        }
+
+        .flag-frame {
+            border: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="flags">
+            <div class="flag-wrapper">
+                <button type="button" class="flag-button" onclick="setLanguage('de')">
+                    <iframe class="flag-frame" src="german_flag.html" title="German Flag"></iframe>
+                </button>
+            </div>
+
+            <div class="flag-wrapper">
+                <button type="button" class="flag-button" onclick="setLanguage('en')">
+                    <iframe class="flag-frame" src="british_flag.html" title="British Flag"></iframe>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/change_language.js"></script>
+</body>
+</html>

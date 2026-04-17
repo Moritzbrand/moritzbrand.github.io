@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>British Flag</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #222;
+        overflow: hidden;
+    }
+
+    .flag {
+      position: relative;
+      width: 900px;
+      aspect-ratio: 2 / 1;
+      background: #012169;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    /* White diagonals */
+    .diag-white-1,
+    .diag-white-2,
+    .diag-red-1,
+    .diag-red-2,
+    .cross-white-h,
+    .cross-white-v,
+    .cross-red-h,
+    .cross-red-v {
+      position: absolute;
+    }
+
+    .diag-white-1,
+    .diag-white-2 {
+      width: 140%;
+      height: 12%;
+      background: white;
+      top: 44%;
+      left: -20%;
+      transform-origin: center;
+    }
+
+    .diag-white-1 { transform: rotate(26.5deg); }
+    .diag-white-2 { transform: rotate(-26.5deg); }
+
+    /* Red diagonals */
+    .diag-red-1,
+    .diag-red-2 {
+      width: 140%;
+      height: 6%;
+      background: #C8102E;
+      top: 47%;
+      left: -20%;
+      transform-origin: center;
+    }
+
+    .diag-red-1 { transform: rotate(26.5deg); }
+    .diag-red-2 { transform: rotate(-26.5deg); }
+
+    /* White central cross */
+    .cross-white-h {
+      top: 40%;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      background: white;
+    }
+
+    .cross-white-v {
+      top: 0;
+      left: 42.5%;
+      width: 15%;
+      height: 100%;
+      background: white;
+    }
+
+    /* Red central cross */
+    .cross-red-h {
+      top: 44%;
+      left: 0;
+      width: 100%;
+      height: 12%;
+      background: #C8102E;
+    }
+
+    .cross-red-v {
+      top: 0;
+      left: 45%;
+      width: 10%;
+      height: 100%;
+      background: #C8102E;
+    }
+  </style>
+</head>
+<body>
+  <div class="flag">
+    <div class="diag-white-1"></div>
+    <div class="diag-white-2"></div>
+    <div class="diag-red-1"></div>
+    <div class="diag-red-2"></div>
+    <div class="cross-white-h"></div>
+    <div class="cross-white-v"></div>
+    <div class="cross-red-h"></div>
+    <div class="cross-red-v"></div>
+  </div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,17 @@
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/base.css">
     <style>
+        .header-frame {
+            width: 100%;
+            border: none;
+            display: block;
+            height: wrap-content;
+            background-color: transparent;
+            margin: 0;
+            margin-bottom: -150px;
+            margin-top: -10px;
+            margin-right: -20px;
+        }
        
         .page {
             padding-top: 20px;
@@ -53,10 +66,28 @@
 </head>
 <body>
     <div class="page">
-        <h1>Portfolio</h1>
+        <iframe class="header-frame" src="header.html" title="Header"></iframe>
+        <h1 id="headline_portfolio">Portfolio</h1>
 
         <iframe class="nav-frame" src="nav.html" title="Navigation"></iframe>
         <iframe class="profile-frame" src="profile.html" title="Navigation"></iframe>
     </div>
+    <script src="js/change_language.js"></script>
+    <script>
+    window.addEventListener("message", function (event) {
+        if (event.data && event.data.type === "set-language") {
+            const lang = event.data.language;
+            localStorage.setItem("language", lang);
+            document.documentElement.lang = lang;
+
+            const frames = document.querySelectorAll("iframe");
+            frames.forEach(frame => {
+                if (frame.contentWindow) {
+                    frame.contentWindow.postMessage({ type: "set-language", language: lang }, "*");
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

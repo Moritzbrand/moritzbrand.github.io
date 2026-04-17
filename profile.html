@@ -1,9 +1,11 @@
+<!-- profile.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="css/colors.css">
     <style>
 
@@ -87,12 +89,16 @@
         <div class="profile-bar">
             <div class="text">
                 <h1>Moritz Brand</h1>
-                <p>Informatics Student with a passion for 3D Art</p>
+                <p id="inf_student_description">
+                    <span class="en">Informatics Student with a focus on 3D Graphics</span>
+                    <span class="de" hidden>Informatik Student mit Fokus auf 3D-Grafik</span>
+                </p>
             </div>
             <div class="image-container">   
                 <img src="images/profile.png" alt="Profile Picture">
             </div>
         </div>
     </div>
+    <script src="js/change_language.js"></script>
 </body>
 </html>
