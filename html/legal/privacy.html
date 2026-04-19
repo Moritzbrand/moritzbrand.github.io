@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <style>
+        .header-frame {
+            width: 100%;
+            border: none;
+            display: block;
+            height: wrap-content;
+            background-color: transparent;
+            margin: 0;
+            margin-bottom: -150px;
+            margin-top: -10px;
+            margin-right: -20px;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to bottom left, var(--color_bg) 50%, var(--color_primary) 200%);
+        }
+
+        .content {
+            width: min(860px, calc(100% - 40px));
+            margin: 0 auto 40px auto;
+            padding: 32px;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, rgba(32, 48, 86, 0.92), rgba(12, 17, 25, 0.96));
+            border: 1px solid rgba(255, 148, 34, 0.35);
+            border-radius: 18px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+        }
+
+        h1 {
+            margin: 40px auto 20px auto;
+            width: min(860px, calc(100% - 40px));
+            font-size: calc(36px + 1.2vw);
+            font-weight: bold;
+            color: var(--color_text);
+        }
+
+        h2 {
+            margin: 26px 0 10px 0;
+            font-size: 24px;
+            color: var(--color_text);
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p,
+        li,
+        a {
+            color: var(--color_text_2);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .accent {
+            color: var(--color_text_accent);
+        }
+
+        .note {
+            margin-top: 26px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 148, 34, 0.25);
+            font-size: 15px;
+            opacity: 0.92;
+        }
+
+        .footer-frame {
+            margin-top: auto;
+            padding: 0;
+            width: 100%;
+            border: none;
+            display: block;
+            height: var(--footer_height);
+            background-color: transparent;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 800px) {
+            h1 {
+                font-size: 42px;
+                margin-bottom: 16px;
+            }
+
+            .content {
+                width: calc(100% - 24px);
+                padding: 22px;
+            }
+
+            p,
+            li,
+            a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <h1>
+            <span class="en">Privacy Policy</span>
+            <span class="de" hidden>Datenschutzerklärung</span>
+        </h1>
+
+        <main class="content">
+            <h2>
+                <span class="en">1. Controller</span>
+                <span class="de" hidden>1. Verantwortlicher</span>
+            </h2>
+            <p>
+                <span class="accent">Moritz Brand</span><br>
+                Martin-Luther-Ring 16, 98574 Schmalkalden<br>
+                E-Mail: <a href="mailto:brandmoritz@web.de">brandmoritz@web.de</a>
+            </p>
+
+            <h2>
+                <span class="en">2. Hosting</span>
+                <span class="de" hidden>2. Hosting</span>
+            </h2>
+            <p>
+                <span class="en">This website is hosted via GitHub Pages. When you visit the site, technical data may be processed by the hosting provider in order to deliver the website and ensure security and stability.</span>
+                <span class="de" hidden>Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Seite können durch den Hosting-Anbieter technische Daten verarbeitet werden, um die Website bereitzustellen und die Sicherheit sowie Stabilität zu gewährleisten.</span>
+            </p>
+
+            <h2>
+                <span class="en">3. Access data</span>
+                <span class="de" hidden>3. Zugriffsdaten</span>
+            </h2>
+            <p>
+                <span class="en">When this website is accessed, technical information such as IP address, date and time of access, requested file, browser type, operating system, referrer URL and status information may be processed.</span>
+                <span class="de" hidden>Beim Aufruf dieser Website können technische Informationen wie IP-Adresse, Datum und Uhrzeit des Zugriffs, angeforderte Datei, Browsertyp, Betriebssystem, Referrer-URL sowie Statusinformationen verarbeitet werden.</span>
+            </p>
+            <p>
+                <span class="en">The processing serves the technically correct delivery of the website and the security and stability of the service.</span>
+                <span class="de" hidden>Die Verarbeitung dient der technisch fehlerfreien Bereitstellung der Website sowie der Sicherheit und Stabilität des Angebots.</span>
+            </p>
+            <p>
+                <span class="en">Legal basis is Art. 6 para. 1 lit. f GDPR (legitimate interest in secure and reliable website operation).</span>
+                <span class="de" hidden>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und zuverlässigen Betrieb der Website).</span>
+            </p>
+
+            <h2>
+                <span class="en">4. Contact by email</span>
+                <span class="de" hidden>4. Kontakt per E-Mail</span>
+            </h2>
+            <p>
+                <span class="en">If you contact me by email, the data you provide will be processed only for handling and answering your request.</span>
+                <span class="de" hidden>Wenn Sie mich per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten ausschließlich zur Bearbeitung und Beantwortung Ihrer Anfrage verarbeitet.</span>
+            </p>
+            <p>
+                <span class="en">Legal basis is Art. 6 para. 1 lit. b GDPR, insofar as your request is related to pre-contractual measures, otherwise Art. 6 para. 1 lit. f GDPR.</span>
+                <span class="de" hidden>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf vorvertragliche Maßnahmen gerichtet ist, andernfalls Art. 6 Abs. 1 lit. f DSGVO.</span>
+            </p>
+
+            <h2>
+                <span class="en">5. Recipients and storage period</span>
+                <span class="de" hidden>5. Empfänger und Speicherdauer</span>
+            </h2>
+            <p>
+                <span class="en">Data may be processed by GitHub as the hosting provider. I do not use my own tracking tools, analytics tools or contact form on this website.</span>
+                <span class="de" hidden>Daten können durch GitHub als Hosting-Anbieter verarbeitet werden. Ich verwende auf dieser Website keine eigenen Tracking- oder Analysetools und kein Kontaktformular.</span>
+            </p>
+            <p>
+                <span class="en">The storage period of technical server data is determined by the hosting provider according to its internal processes. Email inquiries are stored only as long as necessary to process the request and to comply with legal retention obligations, if applicable.</span>
+                <span class="de" hidden>Die Speicherdauer technischer Serverdaten richtet sich nach den internen Prozessen des Hosting-Anbieters. E-Mail-Anfragen werden nur so lange gespeichert, wie dies zur Bearbeitung der Anfrage und gegebenenfalls zur Erfüllung gesetzlicher Aufbewahrungspflichten erforderlich ist.</span>
+            </p>
+
+            <h2>
+                <span class="en">6. Your rights</span>
+                <span class="de" hidden>6. Ihre Rechte</span>
+            </h2>
+            <p>
+                <span class="en">You have the right to access, rectification, erasure, restriction of processing, objection and data portability within the framework of the applicable legal requirements. You also have the right to lodge a complaint with a supervisory authority.</span>
+                <span class="de" hidden>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch sowie Datenübertragbarkeit. Außerdem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren.</span>
+            </p>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script>
+        window.addEventListener("message", function (event) {
+            if (event.data && event.data.type === "set-language") {
+                const lang = event.data.language;
+                localStorage.setItem("language", lang);
+                document.documentElement.lang = lang;
+
+                const frames = document.querySelectorAll("iframe");
+                frames.forEach(frame => {
+                    if (frame.contentWindow) {
+                        frame.contentWindow.postMessage({ type: "set-language", language: lang }, "*");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
