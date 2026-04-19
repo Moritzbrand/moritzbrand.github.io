@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <style>
+        .header-frame {
+            width: 100%;
+            border: none;
+            display: block;
+            height: wrap-content;
+            background-color: transparent;
+            margin: 0;
+            margin-bottom: -150px;
+            margin-top: -10px;
+            margin-right: -20px;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(to bottom left, var(--color_bg) 50%, var(--color_primary) 200%);
+        }
+
+        .content {
+            width: min(860px, calc(100% - 40px));
+            margin: 0 auto 40px auto;
+            padding: 32px;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, rgba(32, 48, 86, 0.92), rgba(12, 17, 25, 0.96));
+            border: 1px solid rgba(255, 148, 34, 0.35);
+            border-radius: 18px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+        }
+
+        h1 {
+            margin: 40px auto 20px auto;
+            width: min(860px, calc(100% - 40px));
+            font-size: calc(36px + 1.2vw);
+            font-weight: bold;
+            color: var(--color_text);
+        }
+
+        h2 {
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            color: var(--color_text);
+        }
+
+        p,
+        li,
+        a {
+            color: var(--color_text_2);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .accent {
+            color: var(--color_highlight);
+        }
+
+        .legal-block {
+            display: grid;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .label {
+            display: inline-block;
+            min-width: 150px;
+            color: var(--color_text);
+            font-weight: bold;
+        }
+
+        .note {
+            margin-top: 26px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 148, 34, 0.25);
+            font-size: 15px;
+            opacity: 0.92;
+        }
+
+        .footer-frame {
+            margin-top: auto;
+            padding: 0;
+            width: 100%;
+            border: none;
+            display: block;
+            height: var(--footer_height);
+            background-color: transparent;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 800px) {
+            h1 {
+                font-size: 42px;
+                margin-bottom: 16px;
+            }
+
+            .content {
+                width: calc(100% - 24px);
+                padding: 22px;
+            }
+
+            p,
+            li,
+            a {
+                font-size: 16px;
+            }
+
+            .label {
+                min-width: 0;
+                display: block;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <h1>
+            <span class="en">Legal Notice</span>
+            <span class="de" hidden>Impressum</span>
+        </h1>
+
+        <main class="content">
+            <h2>
+                <span class="en">Provider information</span>
+                <span class="de" hidden>Anbieterkennzeichnung</span>
+            </h2>
+
+            <div class="legal-block">
+                <p><span class="label">Name:</span> <span class="accent">Moritz Brand</span></p>
+                <p><span class="label"><span class="en">Address:</span><span class="de" hidden>Anschrift:</span></span> Martin-Luther-Ring 16, 98574 Schmalkalden</p>
+                <p><span class="label">E-Mail:</span> <a href="mailto:brandmoritz@web.de">brandmoritz@web.de</a></p>
+            </div>
+
+            <p class="note">
+                <span class="en">
+                    The contact information published in the legal notice is not intended for use in not requested advertising.
+                </span>
+                <span class="de" hidden>
+                    Die im Impressum veröffentlichten Kontaktdaten sind nicht zur Nutzung für unaufgeforderte Werbung bestimmt.
+                </span>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script>
+        window.addEventListener("message", function (event) {
+            if (event.data && event.data.type === "set-language") {
+                const lang = event.data.language;
+                localStorage.setItem("language", lang);
+                document.documentElement.lang = lang;
+
+                const frames = document.querySelectorAll("iframe");
+                frames.forEach(frame => {
+                    if (frame.contentWindow) {
+                        frame.contentWindow.postMessage({ type: "set-language", language: lang }, "*");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
