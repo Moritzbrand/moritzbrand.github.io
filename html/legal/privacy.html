@@ -93,7 +93,7 @@
 
         @media (max-width: 800px) {
             h1 {
-                font-size: 42px;
+                font-size: 36px;
                 margin-bottom: 16px;
             }
 
@@ -106,6 +106,9 @@
             li,
             a {
                 font-size: 16px;
+            }
+            .header-frame{
+                margin-bottom: -130px;
             }
         }
     </style>
@@ -196,21 +199,6 @@
     </div>
 
     <script src="../../js/change_language.js"></script>
-    <script>
-        window.addEventListener("message", function (event) {
-            if (event.data && event.data.type === "set-language") {
-                const lang = event.data.language;
-                localStorage.setItem("language", lang);
-                document.documentElement.lang = lang;
-
-                const frames = document.querySelectorAll("iframe");
-                frames.forEach(frame => {
-                    if (frame.contentWindow) {
-                        frame.contentWindow.postMessage({ type: "set-language", language: lang }, "*");
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="../../js/change_language_on_iframes.js"></script>
 </body>
 </html>

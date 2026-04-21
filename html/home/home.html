@@ -67,7 +67,7 @@
         @media (max-width: 800px) {
 
             h1 {
-                font-size: 48px;
+                font-size: 40px;
                 margin-bottom: 20px;
             }
 
@@ -79,7 +79,7 @@
 </head>
 <body>
     <div class="page">
-        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+        <iframe class="header-frame" src="../general/header.html?hideHome=1" title="Header"></iframe>
         <h1 id="headline_portfolio">Portfolio</h1>
 
         <iframe class="nav-frame" src="nav.html" title="Navigation"></iframe>
@@ -89,21 +89,6 @@
         
     </div>
     <script src="../../js/change_language.js"></script>
-    <script>
-    window.addEventListener("message", function (event) {
-        if (event.data && event.data.type === "set-language") {
-            const lang = event.data.language;
-            localStorage.setItem("language", lang);
-            document.documentElement.lang = lang;
-
-            const frames = document.querySelectorAll("iframe");
-            frames.forEach(frame => {
-                if (frame.contentWindow) {
-                    frame.contentWindow.postMessage({ type: "set-language", language: lang }, "*");
-                }
-            });
-        }
-    });
-</script>
+    <script src="../../js/change_language_on_iframes.js"></script>
 </body>
 </html>
