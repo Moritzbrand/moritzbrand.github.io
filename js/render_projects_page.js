@@ -29,6 +29,7 @@ function createLanguageSpans(value) {
 }
 
 function setI18nHTML(element, value) {
+    if (!element) return;
     element.innerHTML = createLanguageSpans(value);
 }
 
@@ -55,6 +56,10 @@ function getMediaTypeFromPath(path = "") {
         return "video";
     }
 
+    if (lower.endsWith(".svg")) {
+        return "icon";
+    }
+
     return "image";
 }
 
@@ -68,7 +73,8 @@ function normalizePanelMedia(panel) {
             controls: panel.media.controls ?? true,
             autoplay: panel.media.autoplay ?? false,
             muted: panel.media.muted ?? false,
-            loop: panel.media.loop ?? false
+            loop: panel.media.loop ?? false,
+            fit: panel.media.fit || panel.fit || ""
         };
     }
 
@@ -76,7 +82,8 @@ function normalizePanelMedia(panel) {
         return {
             type: getMediaTypeFromPath(panel.image),
             src: panel.image,
-            alt: panel.alt || ""
+            alt: panel.alt || "",
+            fit: panel.fit || ""
         };
     }
 
@@ -122,6 +129,15 @@ function createPanelMedia(media) {
 
         video.playsInline = true;
         return video;
+    }
+
+    if (media.type === "icon") {
+        const icon = document.createElement("span");
+        icon.className = "panel-icon";
+        icon.style.setProperty("--icon-url", `url("${media.src}")`);
+        icon.setAttribute("role", "img");
+        icon.setAttribute("aria-label", media.alt || "Icon");
+        return icon;
     }
 
     const img = document.createElement("img");
@@ -241,6 +257,14 @@ function renderProjectsPage(data) {
                 applyPanelLayoutClass(panelNode, layout);
 
                 if (hasMedia) {
+                    if (media.fit === "contain" || media.type === "icon") {
+                        mediaContainer.classList.add("is-contain");
+                    }
+
+                    if (media.type === "icon") {
+                        mediaContainer.classList.add("is-icon");
+                    }
+
                     mediaContainer.appendChild(mediaElement);
                 } else {
                     mediaContainer.remove();

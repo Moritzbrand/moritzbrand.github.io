@@ -3,6 +3,9 @@
     --section-gap: 72px;
     --card-radius: 40px;
     --panel-radius: 48px;
+
+    --panel-icon-size: 140px;
+    --panel-icon-size-mobile: 110px;
 }
 
 html, body {
@@ -94,8 +97,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--card-radius);
     overflow: hidden;
-    background:
-        linear-gradient(180deg, rgba(95, 151, 255, 0.18), rgba(32, 48, 86, 0.78));
+    background: linear-gradient(180deg, rgba(95, 151, 255, 0.18), rgba(32, 48, 86, 0.78));
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
 
@@ -199,6 +201,36 @@ body {
     min-height: 420px;
 }
 
+/* Image/video/icon should stay inside the frame */
+.panel-media.is-contain,
+.panel-media.is-icon {
+    display: grid;
+    place-items: center;
+    padding: 36px;
+    box-sizing: border-box;
+}
+
+/* For normal images used like icons */
+.panel-media.is-contain img,
+.panel-media.is-contain video {
+    width: min(55%, 180px);
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+/* Real icon mode: exact var(--color_text) color */
+.panel-icon {
+    width: min(45%, var(--panel-icon-size));
+    max-width: var(--panel-icon-size);
+    aspect-ratio: 1;
+    background-color: var(--color_text);
+    opacity: 0.9;
+
+    -webkit-mask: var(--icon-url) center / contain no-repeat;
+    mask: var(--icon-url) center / contain no-repeat;
+}
+
 .panel-content {
     padding: 24px 28px;
     background: rgba(95, 151, 255, 0.18);
@@ -236,25 +268,6 @@ body {
 
 .panel-list li + li {
     margin-top: 8px;
-}
-
-@media (max-width: 850px) {
-    .project-panel.is-media-text,
-    .project-panel.is-text-media {
-        grid-template-columns: 1fr;
-    }
-
-    .project-panel.is-text-media .panel-media {
-        order: 0;
-    }
-
-    .panel-media {
-        min-height: 220px;
-    }
-
-    .project-panel.is-media-only .panel-media {
-        min-height: 260px;
-    }
 }
 
 .project-links {
@@ -305,16 +318,36 @@ body {
         padding: 0 22px 24px;
     }
 
-    .project-panel,
-    .project-panel:nth-child(even) {
+    .project-panel.is-media-text,
+    .project-panel.is-text-media {
         grid-template-columns: 1fr;
     }
 
-    .project-panel:nth-child(even) .panel-image-wrap {
+    .project-panel.is-text-media .panel-media {
         order: 0;
     }
 
-    .panel-image-wrap {
+    .panel-media {
         min-height: 220px;
+    }
+
+    .project-panel.is-media-only .panel-media {
+        min-height: 260px;
+    }
+
+    .panel-media.is-contain,
+    .panel-media.is-icon {
+        padding: 28px;
+    }
+
+    .panel-media.is-contain img,
+    .panel-media.is-contain video {
+        width: min(50%, 150px);
+        max-height: 150px;
+    }
+
+    .panel-icon {
+        width: min(42%, var(--panel-icon-size-mobile));
+        max-width: var(--panel-icon-size-mobile);
     }
 }

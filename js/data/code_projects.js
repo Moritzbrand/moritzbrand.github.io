@@ -25,10 +25,11 @@ window.codeProjects = [
                 panels: [
                     {
                         layout: "text-media",
-                        media:{
-                            type: "image",
-                            src: "../../images/code/game-asset-maker/overview.jpg",
-                            alt: "Game Asset Maker overview"
+                        media: {
+                            type: "icon",
+                            src: "https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/lightbulb.svg",
+                            alt: "Idea icon",
+                            fit: "contain"
                         },
                         content:[
                             {
@@ -48,50 +49,133 @@ window.codeProjects = [
                         ]
                     },
                     {
+                        layout: "media-only",
+                        media: {
+                            type: "video",
+                            src: "../../videos/GameAssetMaker.mp4",
+                            alt: "Game Asset Maker demo",
+                            controls: false,
+                            autoplay: true,
+                            muted: true,
+                            loop: true
+                        }
+                    },
+                    {
                         layout: "text-only",
                         content: [
                             {
                                 type: "heading",
                                 text: {
-                                    en: "Why modify the 3D model?",
-                                    de: "Warum das 3D-Modell überarbeiten?"
+                                    en: "Why optimize the model?",
+                                    de: "Warum das Modell optimieren?"
                                 }
                             },
                             {
                                 type: "subheading",
                                 text: {
-                                    en: "Compatibility",
-                                    de: "Kompatibilität"
-                                }
-                            },
-                            {
-                                type: "paragraph",
-                                text: {
-                                    en: "Game engines often require cleaner geometry, proper UVs, and simpler materials.",
-                                    de: "Game-Engines benötigen oft sauberere Geometrie, korrekte UVs und einfachere Materialien."
-                                }
-                            },
-                            {
-                                type: "subheading",
-                                text: {
-                                    en: "Performance",
-                                    de: "Performance"
+                                    en: "Game Engine Compatibility",
+                                    de: "Kompatibilität mit Game-Engines"
                                 }
                             },
                             {
                                 type: "list",
                                 items: [
                                     {
-                                        en: "Lower triangle count",
-                                        de: "Weniger Dreiecke"
+                                        en: "Complex Blender materials may not display correctly in game engines -> bake them into 2D image textures",
+                                        de: "Komplexe Blender-Materialien werden in Game-Engines oft nicht korrekt dargestellt -> in 2D-Bildtexturen umwandeln"
                                     },
                                     {
-                                        en: "Smaller texture memory usage",
-                                        de: "Geringerer Texturspeicherbedarf"
+                                        en: "Textures need to know where they belong on the model -> create UV maps",
+                                        de: "Texturen müssen wissen, wo sie auf dem Modell liegen sollen -> UV-Maps erstellen"
                                     },
                                     {
-                                        en: "Better runtime efficiency",
-                                        de: "Bessere Laufzeiteffizienz"
+                                        en: "Too many material slots make the asset harder to use -> combine materials",
+                                        de: "Zu viele Material-Slots machen das Asset unübersichtlich -> Materialien zusammenfassen"
+                                    }
+                                ]
+                            },
+                            {
+                                type: "subheading",
+                                text: {
+                                    en: "Real-Time Performance",
+                                    de: "Echtzeit-Performance"
+                                }
+                            },
+                            {
+                                type: "list",
+                                items: [
+                                    {
+                                        en: "Too many polygons slow down the game -> reduce geometry",
+                                        de: "Zu viele Polygone verlangsamen das Spiel -> Geometrie reduzieren"
+                                    },
+                                    {
+                                        en: "Distant objects do not need full detail -> generate LOD models",
+                                        de: "Weit entfernte Objekte brauchen nicht alle Details -> LOD-Modelle generieren"
+                                    },
+                                    {
+                                        en: "Small surface details do not need real geometry -> use normal maps",
+                                        de: "Kleine Oberflächendetails brauchen keine echte Geometrie -> Normal-Maps verwenden"
+                                    },
+                                    {
+                                        en: "Many loose objects are harder to process -> merge them into one asset",
+                                        de: "Viele lose Einzelobjekte sind schwerer zu verarbeiten -> zu einem Asset zusammenfügen"
+                                    },
+                                    {
+                                        en: "Procedural materials can be expensive to render -> bake them into textures",
+                                        de: "Prozedurale Materialien können teuer zu rendern sein -> in Texturen backen"
+                                    },
+                                    {
+                                        en: "Many greyscale textures use extra memory -> pack them into one RGB texture",
+                                        de: "Viele Graustufen-Texturen verbrauchen zusätzlichen Speicher -> in eine RGB-Textur packen"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        layout: "text-only",
+                        content: [
+                            {
+                                type: "heading",
+                                text: {
+                                    en: "Core Features",
+                                    de: "Kernfunktionen"
+                                }
+                            },
+                            {
+                                type: "list",
+                                items: [
+                                    {
+                                        en: "Select Blender objects and export them as a game asset with one click",
+                                        de: "Blender-Objekte auswählen und mit einem klick als ein Game- Asset exportieren"
+                                    },
+                                    {
+                                        en: "Reduce topology and triangulate the model",
+                                        de: "Topologie reduzieren und das Modell triangulieren"
+                                    },
+                                    {
+                                        en: "Utilizing Blender's built-in automatic uv-unwrapping and packaging",
+                                        de: "Verwendung der integrierten automatischen UV-Unwrapping und Packing-Funktionen von Blender"
+                                    },
+                                    {
+                                        en: "Bake multiple materials into a single texture map",
+                                        de: "Mehere Materialien in eine einzigen Textur-Map überführen"
+                                    },
+                                    {
+                                        en: "Bake high-poly details into normal maps",
+                                        de: "Details in Normal-Maps überführen"
+                                    },
+                                    {
+                                        en: "Pack multiple greyscale maps into one RGB texture",
+                                        de: "Mehrere Graustufen-Maps in eine RGB-Textur packen"
+                                    },
+                                    {
+                                        en: "Generate up to 10 LOD models",
+                                        de: "Bis zu 10 LOD-Modelle generieren"
+                                    },
+                                    {
+                                        en: "Export the final asset for use in game engines",
+                                        de: "Finales Asset für Game-Engines exportieren"
                                     }
                                 ]
                             }
