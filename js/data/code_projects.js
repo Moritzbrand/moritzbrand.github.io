@@ -180,6 +180,90 @@ window.codeProjects = [
                                 ]
                             }
                         ]
+                    },
+                    {
+                        layout: "media-text",
+                        media: {
+                            type: "image",
+                            src: "../../images/code/chest.png",
+                            alt: "Example of a game asset created with the add-on",
+                        },
+                        content:[
+                            {
+                                type: "heading",
+                                text:{
+                                    en: "Use Cases",
+                                    de: "Anwendungsfälle"
+                                }
+                            },
+                            {
+                                type: "subheading",
+                                text: {
+                                    en: "Target Audience",
+                                    de: "Zielgruppe"
+                                }
+                            },
+                            {
+                                type: "list",
+                                items: [
+                                    {
+                                        en: "Game developers without experience with Blender",
+                                        de: "Spielentwickler ohne Erfahrung mit Blender"
+                                    },
+                                    {
+                                        en: "3D artists for indie games who need to create many assets quickly",
+                                        de: "3D-Künstler für Indie-Spiele, die schnell viele Assets erstellen müssen"
+                                    }
+                                ]
+                            },
+                            {
+                                type: "subheading",
+                                text: {
+                                    en: "Suitable for",
+                                    de: "Geeignet für"
+                                }
+                            },
+                            {
+                                type: "list",
+                                items: [
+                                    {
+                                            en: "Creating unique hero assets for video games",
+                                            de: "Das erstellen von einzigartige Hero-Assets für Videospiele"
+                                        
+                                    },
+                                    {
+                                            en: "Generating LODs for game assets",
+                                            de: "die generierung von LOD-Stufen für Game-Assets"
+                                        
+                                    },
+                                    {
+                                            en: "Exporting seamless PBR textures",
+                                            de: "Das Exportieren von nahtlosen PBR-Texturen"
+                                        
+                                    }
+                                ]
+                            },
+                            {
+                                type: "subheading",
+                                text: {
+                                    en: "Not optimal for",
+                                    de: "Nicht geeignet für"
+                                }
+                            },
+                            {
+                                type: "list",
+                                items: [
+                                    {
+                                        en: "Repeatatvie patterns like walls or floors that can be made with tiling textures",
+                                        de: "Sich wiederholende Muster wie Wände oder Böden, die mit natlosen Texturen erstellt werden können"
+                                    },
+                                    {
+                                        en: "Animations and rigged characters",
+                                        de: "Animierte Charaktere"
+                                    }
+                                ]
+                            },
+                        ]
                     }
                 ],
                 links: {
