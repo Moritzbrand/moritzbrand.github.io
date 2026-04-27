@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Art | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/projects-page.css">
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="projects-page">
+            <section class="page-intro">
+                <p class="page-kicker">
+                    <span class="en">3D Art</span>
+                    <span class="de" hidden>3D-Art</span>
+                </p>
+
+                <h1>
+                    <span class="en">3D Projects</span>
+                    <span class="de" hidden>3D-Projekte</span>
+                </h1>
+
+                <p class="page-lead">
+                    <span class="en">
+                        A selection of 3D projects, animations, and visual experiments.
+                        This page focuses on modeling, compositing, visual storytelling, and creative 3D workflows.
+                    </span>
+                    <span class="de" hidden>
+                        Eine Auswahl an 3D-Projekten, Animationen und visuellen Experimenten.
+                        Diese Seite zeigt Modellierung, Compositing, visuelles Storytelling und kreative 3D-Workflows.
+                    </span>
+                </p>
+            </section>
+
+            <div id="projects-root"></div>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <!-- Templates -->
+    <template id="language-template">
+        <section class="language-section">
+            <div class="language-header">
+                <h2 class="language-title"></h2>
+                <p class="language-experience"></p>
+            </div>
+
+            <div class="project-list"></div>
+        </section>
+    </template>
+
+    <template id="project-template">
+        <details class="project-card" open>
+            <summary class="project-summary">
+                <div class="project-summary-text">
+                    <h3 class="project-title"></h3>
+                    <p class="project-hint"></p>
+                </div>
+
+                <span class="project-toggle-indicator" aria-hidden="true">+</span>
+            </summary>
+
+            <div class="project-body">
+                <p class="project-description"></p>
+                <div class="project-panels"></div>
+                <div class="project-links"></div>
+            </div>
+        </details>
+    </template>
+
+    <template id="panel-template">
+        <article class="project-panel">
+            <div class="panel-media"></div>
+            <div class="panel-content"></div>
+        </article>
+    </template>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+
+    <script src="../../js/data/three_d_projects.js"></script>
+    <script src="../../js/render_projects_page.js"></script>
+    <script>
+        renderProjectsPage(window.threeDProjects);
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+:root {
+    --about-width: min(1180px, calc(100% - 48px));
+    --about-card-radius: 34px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom left, var(--color_bg) 50%, var(--color_primary) 200%);
+    color: var(--color_text);
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-frame {
+    width: 100%;
+    border: none;
+    display: block;
+    height: 90px;
+    background: transparent;
+}
+
+.about-page {
+    width: var(--about-width);
+    margin: 0 auto;
+    padding: 12px 0 64px;
+    box-sizing: border-box;
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+    gap: 28px;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+.about-kicker {
+    margin: 0 0 12px;
+    color: var(--color_text_accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+}
+
+.about-hero h1 {
+    margin: 0 0 18px;
+    font-size: clamp(46px, 7vw, 96px);
+    line-height: 0.95;
+}
+
+.about-lead {
+    max-width: 850px;
+    margin: 0 0 26px;
+    color: var(--color_text_2);
+    font-size: clamp(19px, 2vw, 26px);
+    line-height: 1.55;
+}
+
+.hero-actions,
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.about-profile-image-wrap {
+    width: min(220px, 70%);
+    aspect-ratio: 1;
+    margin: 0 auto 12px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(95, 151, 255, 0.25), rgba(32, 48, 86, 0.65));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.about-profile-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color_surface);
+    color: var(--color_text);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    background: var(--color_hover);
+}
+
+.button.primary {
+    background: var(--color_primary);
+}
+
+.button.primary:hover {
+    background: var(--color_hover);
+}
+
+.hero-summary-card {
+    display: grid;
+    align-content: center;
+    gap: 14px;
+    padding: 26px;
+    border-radius: var(--about-card-radius);
+    background: linear-gradient(180deg, rgba(95, 151, 255, 0.18), rgba(32, 48, 86, 0.78));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.summary-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--color_text_2);
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.35;
+}
+
+.summary-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color_text);
+}
+
+.about-section {
+    margin-top: 30px;
+}
+
+.section-title {
+    margin: 0 0 16px;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.05;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.about-card {
+    padding: 26px;
+    border-radius: var(--about-card-radius);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-card.featured {
+    background: rgba(95, 151, 255, 0.18);
+}
+
+.about-card h2,
+.about-card h3 {
+    margin: 0 0 12px;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1.2;
+}
+
+.about-card p {
+    margin: 0;
+    color: var(--color_text_2);
+    font-size: clamp(16px, 1.5vw, 21px);
+    line-height: 1.55;
+}
+
+.about-card p + p {
+    margin-top: 12px;
+}
+
+.about-list {
+    margin: 0;
+    padding-left: 1.2em;
+    color: var(--color_text_2);
+    font-size: clamp(16px, 1.5vw, 21px);
+    line-height: 1.55;
+}
+
+.about-list li + li {
+    margin-top: 8px;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.skill-pill {
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color_text);
+    font-weight: 700;
+}
+
+.project-link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-link-card {
+    display: block;
+    padding: 26px;
+    border-radius: var(--about-card-radius);
+    background: linear-gradient(180deg, rgba(95, 151, 255, 0.18), rgba(32, 48, 86, 0.78));
+    color: var(--color_text);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-link-card:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, rgba(95, 151, 255, 0.25), rgba(32, 48, 86, 0.9));
+}
+
+.project-link-card h3 {
+    margin: 0 0 10px;
+    font-size: clamp(24px, 3vw, 38px);
+}
+
+.project-link-card p {
+    margin: 0;
+    color: var(--color_text_2);
+    font-size: clamp(16px, 1.5vw, 21px);
+    line-height: 1.5;
+}
+
+.contact-card {
+    padding: 30px;
+    border-radius: var(--about-card-radius);
+    background: rgba(95, 151, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-card p {
+    max-width: 850px;
+    margin: 0 0 18px;
+    color: var(--color_text_2);
+    font-size: clamp(16px, 1.5vw, 21px);
+    line-height: 1.55;
+}
+
+.footer-frame {
+    margin-top: auto;
+    width: 100%;
+    border: none;
+    display: block;
+    height: var(--footer_height);
+    background: transparent;
+    flex-shrink: 0;
+}
+
+@media (max-width: 850px) {
+    .header-frame {
+        height: 86px;
+    }
+
+    .about-profile-image-wrap {
+        width: min(190px, 60%);
+        margin-bottom: 18px;
+    }
+
+    .about-hero,
+    .about-grid,
+    .project-link-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .hero-summary-card,
+    .project-link-card,
+    .contact-card {
+        padding: 22px;
+    }
+}
