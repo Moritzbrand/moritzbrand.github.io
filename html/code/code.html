@@ -25,68 +25,69 @@
                 </h1>
 
                 <p class="page-lead">
-                    <span class="en">
-                        A selection of programming projects, tools, and experiments.  
-                        Structured by language and designed to show both technical depth and practical results.
-                    </span>
-                    <span class="de" hidden>
-                        Eine Auswahl an Programmierprojekten, Tools und Experimenten.  
-                        Nach Sprache strukturiert und darauf ausgelegt, sowohl technische Tiefe als auch praktische Ergebnisse zu zeigen.
-                    </span>
+                    <span class="en">A compact overview of programming projects, grouped by language. Each card opens a focused project page with images, short notes, and links.</span>
+                    <span class="de" hidden>Eine kompakte Übersicht meiner Programmierprojekte, sortiert nach Sprache. Jede Karte öffnet eine eigene Projektseite mit Bildern, kurzen Stichpunkten und Links.</span>
                 </p>
             </section>
 
-            <div id="projects-root"></div>
+            <section class="project-category">
+                <div class="category-header">
+                    <h2 class="category-title">Python</h2>
+                    <p class="category-note">
+                        <span class="en">Blender scripting, add-ons, automation and practical tooling.</span>
+                        <span class="de" hidden>Blender-Skripte, Add-ons, Automatisierung und praktische Tools.</span>
+                    </p>
+                </div>
+
+                <div class="project-grid">
+                    <a class="project-preview-card" href="game-asset-maker.html" aria-label="Open Game Asset Maker project page">
+                        <div class="project-preview-media is-icon">
+                            <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/box-seam.svg" alt="Game asset icon">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>Game Asset Maker</h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Add-on</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="project-preview-card" href="game-asset-maker.html" aria-label="Open Game Asset Maker project page">
+                        <div class="project-preview-media is-icon">
+                            <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/box-seam.svg" alt="Game asset icon">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>Game Asset Maker</h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Add-on</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="project-category">
+                <div class="category-header">
+                    <h2 class="category-title">C++</h2>
+                    <p class="category-note">
+                        <span class="en">Space for future C++ projects, Unreal Engine experiments or performance-oriented code.</span>
+                        <span class="de" hidden>Platz für zukünftige C++-Projekte, Unreal-Engine-Experimente oder performanceorientierten Code.</span>
+                    </p>
+                </div>
+
+                <div class="project-grid">
+                    <!-- Copy one project-preview-card here when you add a C++ project. -->
+                </div>
+            </section>
         </main>
 
         <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
     </div>
 
-    <!-- Templates -->
-    <template id="language-template">
-        <section class="language-section">
-            <div class="language-header">
-                <h2 class="language-title"></h2>
-                <p class="language-experience"></p>
-            </div>
-
-            <div class="project-list"></div>
-        </section>
-    </template>
-
-    <template id="project-template">
-        <details class="project-card">
-            <summary class="project-summary">
-                <div class="project-summary-text">
-                    <h3 class="project-title"></h3>
-                    <p class="project-hint"></p>
-                </div>
-
-                <span class="project-toggle-indicator" aria-hidden="true">+</span>
-            </summary>
-
-            <div class="project-body">
-                <p class="project-description"></p>
-                <div class="project-panels"></div>
-                <div class="project-links"></div>
-            </div>
-        </details>
-    </template>
-
-    <template id="panel-template">
-        <article class="project-panel">
-            <div class="panel-media"></div>
-            <div class="panel-content"></div>
-        </article>
-    </template>
-
     <script src="../../js/change_language.js"></script>
     <script src="../../js/change_language_on_iframes.js"></script>
-
-    <script src="../../js/data/code_projects.js"></script>
-    <script src="../../js/render_projects_page.js"></script>
-    <script>
-        renderProjectsPage(window.codeProjects);
-    </script>
 </body>
 </html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Contest | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/specific-project-base.css">
+
+    <style>
+        .page {
+            --project-radius: 32px;
+            --project-media-radius: 28px;
+        }
+        .award-layout {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+            grid-template-areas:
+                "image main"
+                "image info";
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .award-image {
+            grid-area: image;
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .award-main-card {
+            grid-area: main;
+        }
+
+        .award-info-card {
+            grid-area: info;
+        }
+
+        @media (max-width: 850px) {
+            .award-layout {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "image"
+                    "main"
+                    "info";
+            }
+
+            .award-image img {
+                height: auto;
+                aspect-ratio: 4 / 5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="project-detail-page page">
+            <a class="back-link" href="3d.html">
+                <span class="en">← Back to 3D Projects</span>
+                <span class="de" hidden>← Zurück zu 3D-Projekten</span>
+            </a>
+
+            <section class="detail-hero">
+                <p class="detail-kicker">
+                    <span class="en">Cinematic Contest · CG Geek</span>
+                    <span class="de" hidden>Cinematic Contest · CG Geek</span>
+                </p>
+
+                <h1>(H)armless</h1>
+
+                <p class="detail-lead">
+                    <span class="en">
+                        My entry for the Cinematic Contest hosted by CG Geek in 2023.
+                        The task was to create a cinematic 3D scene and submit two renderings of it. 
+                    </span>
+                    <span class="de" hidden>
+                        Meine Einreichung für den Cinematic Contest, veranstaltet von CG Geek im Jahr 2023.
+                        Die Aufgabe war es, eine cinematische 3D-Szene zu erstellen und zwei Renderings davon einzureichen.
+                    </span>
+                </p>
+
+                <div class="detail-meta">
+                    <span class="detail-meta-item">Blender</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Image</span>
+                        <span class="de" hidden>Bild</span>
+                    </span>
+                    <span class="detail-meta-item">
+                        <span class="en">Contest</span>
+                        <span class="de" hidden>Wettbewerb</span>
+                    </span>
+                </div>
+            </section>
+            <!--
+            hero-wide
+            feature-left
+            tiles
+            dense
+            -->
+             <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Submission</span>
+                    <span class="de" hidden>Eingereichte Bilder</span>
+                </h2>
+
+                <div class="smart-collage" data-collage-preset="tiles">
+                    <figure class="collage-item">
+                        <img src="../../images/3d/cinematic/cinematic_poster.jpg" alt="First digital asteroid idea">
+                    </figure>
+
+                    <figure class="collage-item">
+                        <img src="../../images/3d/cinematic/cinematic_wide.jpg" alt="Alien shape concept sketch">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <div class="detail-grid">
+                    <article class="detail-card featured">
+                        <h2>
+                            <span class="en">Criteria</span>
+                            <span class="de" hidden>Kriterien</span>
+                        </h2>
+
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">Time limit: 30 days</span>
+                                <span class="de" hidden>Zeitlimit: 30 Tage</span>
+                            </li>
+                            <li>
+                                <span class="en">Still images only - no animations or GIFs</span>
+                                <span class="de" hidden>Nur Bilder - keine Animationen oder GIFs</span>
+                            </li>
+                            <li>
+                                <span class="en">One scene with up to two renderings</span>
+                                <span class="de" hidden> Eine Szene mit bis zu zwei Renderings</span>
+                            </li>
+                            <li>
+                                <span class="en">All objects of focus should be self-made. External assets must be disclosed on entry.</span>
+                                <span class="de" hidden>Alle Objekte des Fokus sollten eigens erstellt sein. Externe Assets müssen in Ihrer Einreichung offengelegt werden.</span>
+                            </li>
+                            <li>
+                                <span class="en">Pre-existing scenes or objects should not be used as the main focus.</span>
+                                <span class="de" hidden>Es dürfen keine vorhandenen Szenen oder Objekte im Vordergrund verwendet werden.</span>
+                            </li>
+                            <li>
+                                <span class="en">Other programs, such as Photoshop, are allowed - You cannot use Photoshop to make a majority of your scene.</span>
+                                <span class="de" hidden>Andere Programme, wie Photoshop, sind erlaubt - Photoshop sollte nicht verwendet werden, um den Großteil der Szene zu erstellen.</span>
+                            </li>
+                            <li>
+                                <span class="en">Do not use any AI Image generation tools.</span>
+                                <span class="de" hidden>KI-Bildgenerierungstools sind nicht gestattet.</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h2>
+                            <span class="en">What's Cinematic?</span>
+                            <span class="de" hidden>Was heißt Cinematic?</span>
+                        </h2>
+
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">The guidelines for the contest suggested to create an original movie scene</span>
+                                <span class="de" hidden>Die Richtlinien für den Wettbewerb schlugen vor, eine eigene originelle Filmzenscene zu erstellen</span>
+                            </li>
+                            <li>
+                                <span class="en">I interpreted the theme so that all properties of "film" come through in my image. E.g., typical aspect ratios, movement, story, and a certain drama</span>
+                                <span class="de" hidden>Ich interpretierte das thema so, dass alle eigenschaften von "Film" in meinem Bild zum Ausdruck kommen. z.B. typische Seitenverhältnisse, Bewegunge, Geschichte und eine gewisse Dramatik</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h2>
+                            <span class="en">About the Contest</span>
+                            <span class="de" hidden>Über den Wettbewerb</span>
+                        </h2>
+
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">The Cinematic contst is one of many hosted by CG Geek</span>
+                                <span class="de" hidden>Der Cinematic Wettbewerb ist einer von vielen, die von CG Geek veranstaltet wurden</span>
+                            </li>
+                            <li>
+                                <span class="en">Prize pool of $1,743</span>
+                                <span class="de" hidden>Preispool 1.743 US-Dollar</span>
+                            </li>
+                            <li>
+                                <span class="en">24 participants submitted renderings</span>
+                                <span class="de" hidden>24 Teilnehmer haben Renderings eingereicht</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="detail-card">
+                        <h2>
+                            <span class="en">Who is CG Geek?</span>
+                            <span class="de" hidden>Wer ist CG Geek?</span>
+                        </h2>
+
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">A YouTuber and 3D artist with over a million subscribers</span>
+                                <span class="de" hidden>Ein YouTuber und 3D-Künstler mit über einer Million Abonnenten</span>
+                            </li>
+                            <li>
+                                <span class="en">He is known for his Blender tutorials, Animations and VFX</span>
+                                <span class="de" hidden>Er ist bekannt für seine Blender-Tutorials, Animationen und VFX</span>
+                            </li>
+
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">First Place</span>
+                    <span class="de" hidden>Erster Platz</span>
+                </h2>
+                <div class="award-layout">
+                    <figure class="award-image">
+                        <img src="../../images/3d/cinematic/cinematic_poster_text.jpg" alt="Winning render of the cinematic contest">
+                    </figure>
+
+                    <article class="detail-card award-main-card">
+                        <h3>
+                            <span class="en">I won!!!</span>
+                            <span class="de" hidden>Ich habe gewonnen!!!</span>
+                        </h3>
+                        <p>
+                            <span class="en">To my surprise, I actually won first prize and received Blender add-ons worth over $1,000.</span>
+                            <span class="de" hidden>Zu meiner Überraschung konnte ich tatsächlich den ersten Platz belegen und Blender-Add-ons im Wert von über 1.000 $ gewinnen.</span>
+                        </p>
+                    </article>
+
+                    <article class="detail-card award-info-card">
+                        <h3>
+                            <span class="en">What I didn't create</span>
+                            <span class="de" hidden>Was ich nicht erstellt habe</span>
+                        </h3>
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">The trees and the two cars are downloaded assets from CGTrader.</span>
+                                <span class="de" hidden>Die Bäume und die beiden Autos sind heruntergeladene Assets von CGTrader.</span>
+                            </li>
+                            <li>
+                                <span class="en">The person sitting on the stairs in the background and the killer were created with MakeHuman.</span>
+                                <span class="de" hidden>Die Person im Hintergrund auf der Treppe und der Killer wurden mit MakeHuman erstellt.</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Entirely Procedural Houses</span>
+                    <span class="de" hidden>Prozedurale Häuser</span>
+                </h2>
+
+                <div class="smart-collage" data-collage-preset="tiles">
+                    <figure class="collage-item">
+                        <img src="../../images/3d/cinematic/house.jpg" alt="First digital asteroid idea">
+                    </figure>
+
+                    <figure class="collage-item">
+                        <img src="../../images/3d/cinematic/houses.jpg" alt="Alien shape concept sketch">
+                    </figure>
+                </div>
+            </section>
+            <section class="detail-section">
+                <article class="detail-card">
+                    <ul class="detail-list">
+
+
+                        <p>
+                            <span class="en">At the time of the contest I wasn't very familiar with Blender's geometry nodes. That's why I decided to use them for this project.</span>
+                            <span class="de" hidden>Zur Zeit des Wettbewerbs war ich nicht sehr vertraut mit Blenders Geometry Nodes.</span>
+                        </p>
+                        <p>
+                            <span class="en">I created the houses in the background of my scene using not a single hand-made mesh.</span>
+                            <span class="de" hidden>Ich habe die Häuser im Hintergrund meiner Szene erstellt, wobei ich kein einzelnes von Hand erstelltes Mesh verwendet habe.</span>
+                        </p>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+    <script src="../../js/smart_collage.js"></script>
+</body>
+</html>

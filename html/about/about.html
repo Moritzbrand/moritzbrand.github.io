@@ -21,8 +21,8 @@
                     </p>
 
                     <h1>
-                        <span class="en">Software, 3D and creative tools.</span>
-                        <span class="de" hidden>Software, 3D und kreative Tools.</span>
+                        <span class="en">Informatics graduate with a creative mindset.</span>
+                        <span class="de" hidden>Informatik-Absolvent mit einem kreativen Mindset.</span>
                     </h1>
 
                     <p class="about-lead">
@@ -53,6 +53,17 @@
                             src="../../images/profile_2.png" 
                             alt="Portrait of Moritz Brand"
                         >
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-icon">🎂</span>
+                        <span>
+                            <span class="en">
+                                <span class="age-value"></span> years old, born in 2002.
+                            </span>
+                            <span class="de" hidden>
+                                <span class="age-value"></span> Jahre alt, geboren 2002.
+                            </span>
+                        </span>
                     </div>
                     <div class="summary-item">
                         <span class="summary-icon">3D</span>
@@ -107,10 +118,10 @@
                         </h3>
                         <p>
                             <span class="en">
-                                I have been learning Blender independently for about 10 years and enjoy turning 3D workflows into more efficient, understandable processes.
+                                I have been learning Blender independently for about 10 years. What I enjoy most is creating procedural materials.
                             </span>
                             <span class="de" hidden>
-                                Ich beschäftige mich seit etwa 10 Jahren selbstständig mit Blender und arbeite gern daran, 3D-Workflows effizienter und verständlicher zu machen.
+                                Ich beschäftige mich seit etwa 10 Jahren selbstständig mit Blender und habe besonders spaß daran, Prozedurale materialien zu erstellen.
                             </span>
                         </p>
                     </article>
@@ -255,5 +266,23 @@
 
     <script src="../../js/change_language.js"></script>
     <script src="../../js/change_language_on_iframes.js"></script>
+    <script>
+        function calculateAge(birthYear, birthMonth, birthDay) {
+            const today = new Date();
+            let age = today.getFullYear() - birthYear;
+
+            const birthdayThisYear = new Date(today.getFullYear(), birthMonth - 1, birthDay);
+
+            if (today < birthdayThisYear) {
+                age--;
+            }
+
+            return age;
+        }
+
+        document.querySelectorAll(".age-value").forEach(element => {
+            element.textContent = calculateAge(2002, 3, 13);
+        });
+    </script>
 </body>
 </html>

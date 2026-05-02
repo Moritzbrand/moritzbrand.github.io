@@ -25,68 +25,134 @@
                 </h1>
 
                 <p class="page-lead">
-                    <span class="en">
-                        A selection of 3D projects, animations, and visual experiments.
-                        This page focuses on modeling, compositing, visual storytelling, and creative 3D workflows.
-                    </span>
-                    <span class="de" hidden>
-                        Eine Auswahl an 3D-Projekten, Animationen und visuellen Experimenten.
-                        Diese Seite zeigt Modellierung, Compositing, visuelles Storytelling und kreative 3D-Workflows.
-                    </span>
+                    <span class="en">Kick a project to find out more about it!</span>
+                    <span class="de" hidden>Klicke auf ein Projekt, um mehr darüber zu erfahren!</span>
                 </p>
             </section>
 
-            <div id="projects-root"></div>
+            <section class="project-category">
+                <div class="project-grid">
+                    <a class="project-preview-card" href="the_asteroid.html" aria-label="Open The Asteroid project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/the_asteroid/space_station_render.jpg" alt="The Asteroid preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>The Asteroid</h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Video</span>
+                                <span class="tag">Camera Tracking</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project-preview-card" href="cinematic.html" aria-label="Open Cinematic project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/cinematic/cinematic_poster_square.jpg" alt="Cinematic Contest preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>Cinematic Contest</h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">
+                                    <span class="en">Image</span>
+                                    <span class="de" hidden>Bild</span>
+                                </span>
+                                <span class="tag">
+                                    <span class="en">Contest</span>
+                                    <span class="de" hidden>Wettbewerb</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project-preview-card" href="horror_game.html" aria-label="Open Horror Game project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/horror_game/lightmare_preview.jpg" alt="Horror Game preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>
+                                <span class="en">Horror Game</span>
+                                <span class="de" hidden>Horror Game</span>
+                            </h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Substance Painter</span>
+                                <span class="tag">Unity</span>
+                                <span class="tag">
+                                    <span class="en">Game Assets</span>
+                                    <span class="de" hidden>Game Assets</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project-preview-card" href="balloon_character.html" aria-label="Open Balloon Character project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/balloon_character/balloon_guy.jpg" alt="Balloon Character preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>
+                                <span class="en">Balloon Guy</span>
+                                <span class="de" hidden>Balloon Guy</span>
+                            </h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Camera Matching</span>
+                                <span class="tag">Compositing</span>
+                                <span class="tag">
+                                    <span class="en">Image</span>
+                                    <span class="de" hidden>Bild</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project-preview-card" href="dark_space.html" aria-label="Open Dark Space project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/dark_space/planet.jpg" alt="Dark Space preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>
+                                <span class="en">Dark Space</span>
+                                <span class="de" hidden>Dark Space</span>
+                            </h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Video</span>
+                                <span class="tag">Concept</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project-preview-card" href="fashion_giants.html" aria-label="Open Fashion Giants project page">
+                        <div class="project-preview-media">
+                            <img src="../../images/3d/fashion_giants/fashion_giants_preview.jpg" alt="Fashion Giants preview image">
+                        </div>
+                        <div class="project-preview-content">
+                            <h2>
+                                <span class="en">Fashion Giants</span>
+                                <span class="de" hidden>Fashion Giants</span>
+                            </h2>
+                            <div class="tag-row">
+                                <span class="tag">Blender</span>
+                                <span class="tag">Camera Matching</span>
+                                <span class="tag">Compositing</span>
+                                <span class="tag">
+                                    <span class="en">Image</span>
+                                    <span class="de" hidden>Bild</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
     </div>
 
-    <!-- Templates -->
-    <template id="language-template">
-        <section class="language-section">
-            <div class="language-header">
-                <h2 class="language-title"></h2>
-                <p class="language-experience"></p>
-            </div>
-
-            <div class="project-list"></div>
-        </section>
-    </template>
-
-    <template id="project-template">
-        <details class="project-card" open>
-            <summary class="project-summary">
-                <div class="project-summary-text">
-                    <h3 class="project-title"></h3>
-                    <p class="project-hint"></p>
-                </div>
-
-                <span class="project-toggle-indicator" aria-hidden="true">+</span>
-            </summary>
-
-            <div class="project-body">
-                <p class="project-description"></p>
-                <div class="project-panels"></div>
-                <div class="project-links"></div>
-            </div>
-        </details>
-    </template>
-
-    <template id="panel-template">
-        <article class="project-panel">
-            <div class="panel-media"></div>
-            <div class="panel-content"></div>
-        </article>
-    </template>
-
     <script src="../../js/change_language.js"></script>
     <script src="../../js/change_language_on_iframes.js"></script>
-
-    <script src="../../js/data/three_d_projects.js"></script>
-    <script src="../../js/render_projects_page.js"></script>
-    <script>
-        renderProjectsPage(window.threeDProjects);
-    </script>
 </body>
 </html>
