@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Character | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/specific-project-base.css">
+
+    <style>
+        .balloon-page {
+            --project-radius: 32px;
+            --project-media-radius: 28px;
+        }
+
+        .balloon-image-grid {
+            display: grid;
+            gap: var(--project-gap);
+        }
+
+        .balloon-image-grid.is-four-columns {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .balloon-image-grid.is-two-columns {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .balloon-image-card {
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .balloon-image-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .balloon-image-card.is-portrait img {
+            aspect-ratio: 2 / 3;
+        }
+
+        .balloon-image-card.is-square img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .balloon-image-card figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 32px 16px 14px;
+            color: var(--color_text);
+            font-size: 0.95rem;
+            line-height: 1.35;
+            background: linear-gradient(
+                to top,
+                rgba(12, 17, 25, 0.94),
+                rgba(12, 17, 25, 0.52) 60%,
+                rgba(12, 17, 25, 0)
+            );
+        }
+
+        .balloon-brief-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .balloon-main-image {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .balloon-main-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        .balloon-brief-cards {
+            display: grid;
+            gap: var(--project-gap);
+        }
+
+        @media (max-width: 850px) {
+            .balloon-brief-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .balloon-image-grid.is-four-columns {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .balloon-image-grid.is-two-columns,
+            .balloon-image-grid.is-four-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="project-detail-page balloon-page">
+            <a class="back-link" href="3d.html">
+                <span class="en">← Back to 3D Projects</span>
+                <span class="de" hidden>← Zurück zu 3D-Projekten</span>
+            </a>
+
+            <section class="detail-hero">
+                <p class="detail-kicker">
+                    <span class="en">Freelance Project · Fiverr</span>
+                    <span class="de" hidden>Freelance-Projekt · Fiverr</span>
+                </p>
+
+                <h1>
+                    <span class="en">Balloon Character</span>
+                    <span class="de" hidden>Ballon-Charakter</span>
+                </h1>
+
+                <p class="detail-lead">
+                    <span class="en">
+                        A client project where I created a balloon-like 3D character and composited it into supplied London photos.
+                    </span>
+                    <span class="de" hidden>
+                        Ein Kundenauftrag, bei dem ich einen ballonartigen 3D-Charakter erstellt und in gelieferte London-Fotos eingefügt habe.
+                    </span>
+                </p>
+
+                <div class="detail-meta">
+                    <span class="detail-meta-item">Blender</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Client Work</span>
+                        <span class="de" hidden>Kundenauftrag</span>
+                    </span>
+                    <span class="detail-meta-item">Compositing</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Character Render</span>
+                        <span class="de" hidden>Charakter-Rendering</span>
+                    </span>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <div class="balloon-brief-grid">
+                    <figure class="balloon-main-image">
+                        <img src="../../images/3d/balloon_character/balloon_guy.jpg" alt="Balloon character render preferred by the client">
+                    </figure>
+
+                    <div class="balloon-brief-cards">
+                        <article class="detail-card featured">
+                            <h2>
+                                <span class="en">Client Brief</span>
+                                <span class="de" hidden>Kundenbriefing</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">Reference image supplied by the client</span>
+                                    <span class="de" hidden>Referenzbild vom Klienten erhalten</span>
+                                </li>
+                                <li>
+                                    <span class="en">Character should look like a large inflatable balloon figure</span>
+                                    <span class="de" hidden>Charakter sollte wie eine große aufblasbare Ballonfigur wirken</span>
+                                </li>
+                                <li>
+                                    <span class="en">Final character inserted into London photos</span>
+                                    <span class="de" hidden>Finaler Charakter in London-Fotos eingefügt</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <h2>
+                                <span class="en">My Work</span>
+                                <span class="de" hidden>Mein Beitrag</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">3D modeling of the character</span>
+                                    <span class="de" hidden>3D-Modellierung des Charakters</span>
+                                </li>
+                                <li>
+                                    <span class="en">Inflatable material look and simple poses</span>
+                                    <span class="de" hidden>Aufblasbarer Material-Look und einfache Posen</span>
+                                </li>
+                                <li>
+                                    <span class="en">Compositing into client photos</span>
+                                    <span class="de" hidden>Compositing in Kundenfotos</span>
+                                </li>
+                                <li>
+                                    <span class="en">Additional purple renderings for T-shirt prints</span>
+                                    <span class="de" hidden>Zusätzliche violette Renderings für T-Shirt-Drucke</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">London Composites</span>
+                    <span class="de" hidden>London-Compositings</span>
+                </h2>
+
+                <div class="balloon-image-grid is-four-columns">
+                    <figure class="balloon-image-card is-portrait">
+                        <img src="../../images/3d/balloon_character/BigBen.jpg" alt="Balloon character composited near Big Ben">
+                    </figure>
+
+                    <figure class="balloon-image-card is-portrait">
+                        <img src="../../images/3d/balloon_character/Bus.jpg" alt="Balloon character composited next to a London bus">
+                    </figure>
+
+                    <figure class="balloon-image-card is-portrait">
+                        <img src="../../images/3d/balloon_character/Tunnel.jpg" alt="Balloon character composited into a tunnel scene">
+                    </figure>
+
+                    <figure class="balloon-image-card is-portrait">
+                        <img src="../../images/3d/balloon_character/China.jpg" alt="Balloon character composited into another supplied scene">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Character and T-Shirt Renderings</span>
+                    <span class="de" hidden>Charakter- und T-Shirt-Renderings</span>
+                </h2>
+
+                <div class="balloon-image-grid is-two-columns">
+                    <figure class="balloon-image-card is-square">
+                        <img src="../../images/3d/balloon_character/balloon_guy.jpg" alt="Final balloon character render">
+                        <figcaption>
+                            <span class="en">Client-preferred character render</span>
+                            <span class="de" hidden>Vom Klienten bevorzugtes Charakter-Rendering</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="balloon-image-card is-square">
+                        <img src="../../images/3d/balloon_character/tshirt_designs.jpg" alt="Grid of nine purple character renderings for T-shirt designs">
+                        <figcaption>
+                            <span class="en">Purple character poses for T-shirt prints</span>
+                            <span class="de" hidden>Violette Charakter-Posen für T-Shirt-Drucke</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+</body>
+</html>

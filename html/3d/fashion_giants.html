@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Giants | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/specific-project-base.css">
+
+    <style>
+        .fashion-page {
+            --project-radius: 32px;
+            --project-media-radius: 28px;
+        }
+
+        .fashion-brief-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .fashion-feature-image {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .fashion-feature-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .fashion-brief-cards {
+            display: grid;
+            gap: var(--project-gap);
+        }
+
+        .fashion-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--project-gap);
+        }
+
+        .fashion-gallery-item {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .fashion-gallery-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 4 / 5;
+        }
+
+        .fashion-gallery-item.is-wide {
+            grid-column: span 2;
+        }
+
+        .fashion-gallery-item.is-wide img {
+            aspect-ratio: 16 / 10;
+        }
+
+        .fashion-gallery-item.is-featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .fashion-gallery-item.is-featured img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .fashion-small-note {
+            margin-top: 12px;
+            color: var(--color_text_2);
+            font-size: clamp(14px, 1.2vw, 17px);
+            line-height: 1.45;
+        }
+
+        @media (max-width: 950px) {
+            .fashion-brief-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .fashion-feature-image img {
+                min-height: 0;
+                aspect-ratio: 16 / 10;
+            }
+
+            .fashion-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .fashion-gallery-item.is-featured,
+            .fashion-gallery-item.is-wide {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .fashion-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .fashion-gallery-item.is-featured,
+            .fashion-gallery-item.is-wide {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .fashion-gallery-item img,
+            .fashion-gallery-item.is-featured img,
+            .fashion-gallery-item.is-wide img {
+                aspect-ratio: 4 / 5;
+            }
+
+            .fashion-gallery-item.is-wide img {
+                aspect-ratio: 16 / 10;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="project-detail-page fashion-page">
+            <a class="back-link" href="3d.html">
+                <span class="en">← Back to 3D Projects</span>
+                <span class="de" hidden>← Zurück zu 3D-Projekten</span>
+            </a>
+
+            <section class="detail-hero">
+                <p class="detail-kicker">
+                    <span class="en">Freelance Project · Fiverr</span>
+                    <span class="de" hidden>Freelance-Projekt · Fiverr</span>
+                </p>
+
+                <h1>
+                    <span class="en">Fashion Giants</span>
+                    <span class="de" hidden>Fashion-Giganten</span>
+                </h1>
+
+                <p class="detail-lead">
+                    <span class="en">
+                        Oversized fashion objects modeled in 3D and composited into location photos supplied by the client.
+                    </span>
+                    <span class="de" hidden>
+                        Überdimensionierte Modeobjekte, die in 3D modelliert und in vom Klienten gelieferte Location-Fotos eingefügt wurden.
+                    </span>
+                </p>
+
+                <div class="detail-meta">
+                    <span class="detail-meta-item">Blender</span>
+                    <span class="detail-meta-item">Substance Painter</span>
+                    <span class="detail-meta-item">Compositing</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Client Work</span>
+                        <span class="de" hidden>Kundenauftrag</span>
+                    </span>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <div class="fashion-brief-layout">
+                    <figure class="fashion-feature-image">
+                        <img src="../../images/3d/fashion_giants/fashion_giants_preview.jpg" alt="Oversized black shoe composited into a landscape photo">
+                    </figure>
+
+                    <div class="fashion-brief-cards">
+                        <article class="detail-card featured">
+                            <h2>
+                                <span class="en">Client Brief</span>
+                                <span class="de" hidden>Kundenbriefing</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">6 fashion reference objects</span>
+                                    <span class="de" hidden>6 Modeobjekte als Referenz</span>
+                                </li>
+                                <li>
+                                    <span class="en">6 supplied location photos</span>
+                                    <span class="de" hidden>6 gelieferte Location-Fotos</span>
+                                </li>
+                                <li>
+                                    <span class="en">Each object should appear giant and surreal</span>
+                                    <span class="de" hidden>Jedes Objekt sollte riesig und surreal wirken</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <h2>
+                                <span class="en">My Work</span>
+                                <span class="de" hidden>Mein Beitrag</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">Modeled 4 shoes, 1 handbag and 1 pair of glasses</span>
+                                    <span class="de" hidden>4 Schuhe, 1 Handtasche und 1 Brille modelliert</span>
+                                </li>
+                                <li>
+                                    <span class="en">Textured the objects in Substance Painter</span>
+                                    <span class="de" hidden>Objekte in Substance Painter texturiert</span>
+                                </li>
+                                <li>
+                                    <span class="en">Composited the 3D objects into the photos using Blender</span>
+                                    <span class="de" hidden>3D-Objekte mit Blender in die Fotos eingefügt</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Final Composites</span>
+                    <span class="de" hidden>Finale Compositings</span>
+                </h2>
+
+                <div class="fashion-gallery">
+                    
+
+                    <figure class="fashion-gallery-item is-featured">
+                        <img src="../../images/3d/fashion_giants/brown.jpg" alt="Oversized brown shoe in a landscape">
+                    </figure>
+
+                    <figure class="fashion-gallery-item">
+                        <img src="../../images/3d/fashion_giants/purple.jpg" alt="Oversized purple shoe in a landscape">
+                    </figure>
+
+                    <figure class="fashion-gallery-item">
+                        <img src="../../images/3d/fashion_giants/glasses.jpg" alt="Oversized glasses composited into a location photo">
+                    </figure>
+
+                    <figure class="fashion-gallery-item">
+                        <img src="../../images/3d/fashion_giants/bag.jpg" alt="Oversized handbag composited into a location photo">
+                    </figure>
+
+                    <figure class="fashion-gallery-item">
+                        <img src="../../images/3d/fashion_giants/black.jpg" alt="Oversized black shoe in a landscape">
+                    </figure>
+
+                    <figure class="fashion-gallery-item">
+                        <img src="../../images/3d/fashion_giants/leopard.jpg" alt="Oversized leopard-pattern shoe in a landscape">
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+</body>
+</html>
