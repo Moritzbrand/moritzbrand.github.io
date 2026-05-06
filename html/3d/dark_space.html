@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Space | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/specific-project-base.css">
+
+    <style>
+        .dark-space-page {
+            --project-radius: 32px;
+            --project-media-radius: 28px;
+        }
+
+        .dark-space-video {
+            width: min(760px, 100%);
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+        }
+
+        .dark-space-video video {
+            object-fit: cover;
+        }
+
+        .dark-feature-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .dark-feature-image {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .dark-feature-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .dark-side-cards {
+            display: grid;
+            gap: var(--project-gap);
+        }
+
+        .dark-single-wide-image {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .dark-single-wide-image img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 8;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .dark-environment-layout {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .dark-environment-images {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--project-gap);
+        }
+
+        .dark-image-card {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .dark-image-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .dark-image-card figcaption {
+            padding: 12px 14px 14px;
+            color: var(--color_text_2);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 950px) {
+            .dark-feature-layout,
+            .dark-environment-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .dark-feature-image img {
+                min-height: 0;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .dark-space-video {
+                width: 100%;
+            }
+
+            .dark-single-wide-image img {
+                aspect-ratio: 1 / 1;
+            }
+
+            .dark-environment-images {
+                grid-template-columns: 1fr;
+            }
+
+            .dark-image-card img {
+                aspect-ratio: 1 / 1;
+            }
+
+            .dark-feature-image img {
+                aspect-ratio: 1 / 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="project-detail-page dark-space-page">
+            <a class="back-link" href="3d.html">
+                <span class="en">← Back to 3D Projects</span>
+                <span class="de" hidden>← Zurück zu 3D-Projekten</span>
+            </a>
+
+            <section class="detail-hero">
+                <p class="detail-kicker">
+                    <span class="en">Personal Project · Sci-Fi Worldbuilding</span>
+                    <span class="de" hidden>Eigenes Projekt · Sci-Fi-Worldbuilding</span>
+                </p>
+
+                <h1>Dark Space</h1>
+
+                <p class="detail-lead">
+                    <span class="en">
+                        A personal sci-fi visual development project exploring a dry mining civilization on a tidally locked planet.
+                    </span>
+                    <span class="de" hidden>
+                        Ein eigenes Sci-Fi-Visual-Development-Projekt über eine trockene Bergbau-Zivilisation auf einem gebunden rotierenden Planeten.
+                    </span>
+                </p>
+
+                <div class="detail-meta">
+                    <span class="detail-meta-item">Blender</span>
+                    <span class="detail-meta-item">Video</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Sci-Fi</span>
+                        <span class="de" hidden>Sci-Fi</span>
+                    </span>
+                    <span class="detail-meta-item">
+                        <span class="en">Concept</span>
+                        <span class="de" hidden>Konzept</span>
+                    </span>
+                </div>
+            </section>
+
+            <section class="project-video dark-space-video">
+                <video
+                    src="../../videos/dark_space.mp4"
+                    poster="../../images/3d/dark_space/planet.jpg"
+                    controls
+                    playsinline>
+                </video>
+            </section>
+
+            <section class="detail-section">
+                <div class="dark-feature-layout">
+                    <figure class="dark-feature-image">
+                        <img src="../../images/3d/dark_space/Wide.jpg" alt="Wide render of a planet close to its sun">
+                    </figure>
+
+                    <div class="dark-side-cards">
+                        <article class="detail-card featured">
+                            <h2>
+                                <span class="en">Core Idea</span>
+                                <span class="de" hidden>Kernidee</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">One side always faces the sun</span>
+                                    <span class="de" hidden>Eine Seite zeigt dauerhaft zur Sonne</span>
+                                </li>
+                                <li>
+                                    <span class="en">Life exists near the border between heat and darkness</span>
+                                    <span class="de" hidden>Leben existiert nahe der Grenze zwischen Hitze und Dunkelheit</span>
+                                </li>
+                                <li>
+                                    <span class="en">Dry, underground, mining-focused civilization</span>
+                                    <span class="de" hidden>Trockene, unterirdische Bergbau-Zivilisation</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <h2>
+                                <span class="en">Project Status</span>
+                                <span class="de" hidden>Projektstatus</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">Originally planned as a short sci-fi film</span>
+                                    <span class="de" hidden>Ursprünglich als Sci-Fi-Kurzfilm geplant</span>
+                                </li>
+                                <li>
+                                    <span class="en">Paused due to limited study time and long Cycles render times</span>
+                                    <span class="de" hidden>Auf Eis gelegt wegen wenig Zeit im Studium und langen Cycles-Renderzeiten</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Mining Ship Design</span>
+                    <span class="de" hidden>Bergbau-Raumschiff</span>
+                </h2>
+
+                <div class="dark-feature-layout">
+                    <figure class="dark-feature-image">
+                        <img src="../../images/3d/dark_space/spaceship.jpg" alt="Sci-fi mining spaceship design">
+                    </figure>
+
+                    <div class="dark-side-cards">
+                        <article class="detail-card featured">
+                            <h2>
+                                <span class="en">Design Purpose</span>
+                                <span class="de" hidden>Design-Zweck</span>
+                            </h2>
+
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">Central mining laser for asteroid extraction</span>
+                                    <span class="de" hidden>Zentraler Bergbau-Laser für Asteroidenabbau</span>
+                                </li>
+                                <li>
+                                    <span class="en">Two side tanks for processed material</span>
+                                    <span class="de" hidden>Zwei seitliche Tanks für verarbeitetes Material</span>
+                                </li>
+                                <li>
+                                    <span class="en">Dusty sand color inspired by the planet's dry climate</span>
+                                    <span class="de" hidden>Staubige Sandfarbe passend zum trockenen Klima des Planeten</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Space Environment</span>
+                    <span class="de" hidden>Weltraum-Umgebung</span>
+                </h2>
+
+                <div class="dark-environment-layout">
+                    <article class="detail-card featured">
+                        <h2>
+                            <span class="en">Environment Workflow</span>
+                            <span class="de" hidden>Umgebungs-Workflow</span>
+                        </h2>
+
+                        <ul class="detail-list">
+                            <li>
+                                <span class="en">Procedural Blender world shader as a base</span>
+                                <span class="de" hidden>Prozeduraler Blender World Shader als Grundlage</span>
+                            </li>
+                            <li>
+                                <span class="en">Added lights, nebula-like color and volumetric space fog</span>
+                                <span class="de" hidden>Lichter, Nebel-Farben und volumetrischen Weltraum-Dunst ergänzt</span>
+                            </li>
+                            <li>
+                                <span class="en">Rendered the expensive volumetrics into a 360° background</span>
+                                <span class="de" hidden>Aufwendige Volumetrics als 360°-Hintergrund gerendert</span>
+                            </li>
+                            <li>
+                                <span class="en">Added the sun later and rendered it as a 306°-HDRI</span>
+                                <span class="de" hidden>Sonne später in die umgebung hinzugefügt und erneut als 306°-HDRI gerendert</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <div class="dark-environment-images">
+                        <figure class="dark-image-card">
+                            <img src="../../images/3d/dark_space/volumetrics8k.jpg" alt="Rendered volumetric space environment">
+                            <figcaption>
+                                <span class="en">Volumetric 360° background</span>
+                                <span class="de" hidden>Volumetrischer 360°-Hintergrund</span>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="dark-image-card">
+                            <img src="../../images/3d/dark_space/sun8k.jpg" alt="HDRI-like sun and space background">
+                            <figcaption>
+                                <span class="en">Sun lighting and color variation</span>
+                                <span class="de" hidden>Sonnenlicht und Farbvariation</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+
+                <figure class="dark-single-wide-image">
+                    <img src="../../images/3d/dark_space/Wide.jpg" alt="Final wide render of the Dark Space planet scene">
+                </figure>
+            </section>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+</body>
+</html>
