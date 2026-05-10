@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hole Divers | Moritz Brand</title>
+    <link rel="stylesheet" href="../../css/colors.css">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/specific-project-base.css">
+
+    <style>
+        .hole-divers-page {
+            --project-radius: 32px;
+            --project-media-radius: 28px;
+        }
+
+        .hole-overview-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .hole-feature-image,
+        .hole-image-card,
+        .interaction-screenshot,
+        .hole-comparison-card {
+            margin: 0;
+            overflow: hidden;
+            border-radius: var(--project-media-radius);
+            background: var(--color_surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+        }
+
+        .hole-feature-image img,
+        .hole-image-card img,
+        .hole-image-card video,
+        .interaction-screenshot img,
+        .hole-comparison-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hole-feature-image img {
+            min-height: 420px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .hole-side-cards {
+            display: grid;
+            gap: var(--project-gap);
+        }
+
+        .hole-screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: var(--project-gap);
+        }
+
+        .hole-image-card img,
+        .hole-image-card video {
+            aspect-ratio: 1 / 1;
+        }
+
+        .interaction-list {
+            display: grid;
+            gap: calc(var(--project-gap) * 1.4);
+        }
+
+        .interaction-card {
+            display: grid;
+            gap: 12px;
+        }
+
+        .interaction-title {
+            margin: 0;
+            font-size: clamp(22px, 2.4vw, 34px);
+            line-height: 1.1;
+        }
+
+        .interaction-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+            gap: var(--project-gap);
+            align-items: stretch;
+        }
+
+        .interaction-media-pair {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+            gap: var(--project-gap);
+            align-items: center;
+        }
+
+        .interaction-diagram {
+            margin: 0;
+            overflow: visible;
+        }
+
+        .interaction-diagram img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+        }
+
+        .interaction-screenshot img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .interaction-row .detail-card {
+            display: flex;
+            align-items: center;
+        }
+
+        .hole-comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--project-gap);
+        }
+
+        .hole-comparison-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hole-comparison-card img {
+            aspect-ratio: 1 / 1;
+        }
+
+        .hole-comparison-card figcaption {
+            padding: 14px 16px 16px;
+            color: var(--color_text_2);
+            font-size: clamp(14px, 1.2vw, 17px);
+            line-height: 1.45;
+        }
+
+        .hole-comparison-card figcaption strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--color_text);
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .compact-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--project-gap);
+        }
+
+        .compact-card {
+            padding: 22px;
+            border-radius: var(--project-radius);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .compact-card h3 {
+            margin: 0 0 10px;
+            font-size: clamp(20px, 2vw, 28px);
+            line-height: 1.15;
+        }
+
+        .compact-card p {
+            margin: 0;
+            color: var(--color_text_2);
+            font-size: clamp(15px, 1.3vw, 18px);
+            line-height: 1.45;
+        }
+
+        @media (max-width: 1050px) {
+            .interaction-row {
+                grid-template-columns: 1fr;
+            }
+
+            .interaction-row .detail-card {
+                display: block;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hole-overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hole-feature-image img {
+                min-height: 0;
+            }
+
+            .hole-screenshot-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .compact-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .interaction-list {
+                gap: 28px;
+            }
+
+            .interaction-row {
+                gap: 12px;
+            }
+
+            .interaction-media-pair {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .interaction-diagram img,
+            .interaction-screenshot img {
+                aspect-ratio: 1 / 1;
+            }
+
+            .hole-comparison-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+
+            .hole-comparison-card figcaption {
+                padding: 10px;
+                font-size: 0.72rem;
+                line-height: 1.35;
+            }
+
+            .hole-comparison-card figcaption strong {
+                margin-bottom: 4px;
+                font-size: 0.82rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <iframe class="header-frame" src="../general/header.html" title="Header"></iframe>
+
+        <main class="project-detail-page hole-divers-page">
+            <a class="back-link" href="code.html">
+                <span class="en">← Back to Code Projects</span>
+                <span class="de" hidden>← Zurück zu Code-Projekten</span>
+            </a>
+
+            <section class="detail-hero">
+                <p class="detail-kicker">
+                    <span class="en">University Game Project · Godot</span>
+                    <span class="de" hidden>Hochschulprojekt · Godot</span>
+                </p>
+
+                <h1>Hole Divers</h1>
+
+                <p class="detail-lead">
+                    <span class="en">A surreal first-person puzzle game about curiosity, two inverted dimensions and a mysterious hole.</span>
+                    <span class="de" hidden>Ein surreales First-Person-Puzzle-Game über Neugier, zwei invertierte Dimensionen und ein mysteriöses Loch.</span>
+                </p>
+
+                <div class="detail-meta">
+                    <span class="detail-meta-item">Godot</span>
+                    <span class="detail-meta-item">GDScript</span>
+                    <span class="detail-meta-item">Blender</span>
+                    <span class="detail-meta-item">
+                        <span class="en">Game Design</span>
+                        <span class="de" hidden>Game Design</span>
+                    </span>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <div class="hole-overview-grid">
+                    <figure class="hole-feature-image">
+                        <img src="../../images/code/hole_divers/main_menu.jpg" alt="Hole Divers main menu">
+                    </figure>
+
+                    <div class="hole-side-cards">
+                        <article class="detail-card featured">
+                            <h2>
+                                <span class="en">Concept</span>
+                                <span class="de" hidden>Konzept</span>
+                            </h2>
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">White world → black hole</span>
+                                    <span class="de" hidden>Weiße Welt → schwarzes Loch</span>
+                                </li>
+                                <li>
+                                    <span class="en">Black world → white hole</span>
+                                    <span class="de" hidden>Schwarze Welt → weißes Loch</span>
+                                </li>
+                                <li>
+                                    <span class="en">Throw items in → discover hidden rules</span>
+                                    <span class="de" hidden>Items hineinwerfen → versteckte Regeln entdecken</span>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <h2>
+                                <span class="en">Focus</span>
+                                <span class="de" hidden>Fokus</span>
+                            </h2>
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="en">UI-free interaction design</span>
+                                    <span class="de" hidden>UI-freies Interaktionsdesign</span>
+                                </li>
+                                <li>
+                                    <span class="en">Sound-based feedback</span>
+                                    <span class="de" hidden>Feedback über Sound</span>
+                                </li>
+                                <li>
+                                    <span class="en">Data-driven crafting recipes</span>
+                                    <span class="de" hidden>Datenbasierte Crafting-Rezepte</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Game Screenshots</span>
+                    <span class="de" hidden>Game-Screenshots</span>
+                </h2>
+
+                <div class="hole-screenshot-grid">
+                    <figure class="hole-image-card">
+                        <img src="../../images/code/hole_divers/black_dimension.jpg" alt="Black dimension with white hole">
+                    </figure>
+
+                    <figure class="hole-image-card">
+                        <img src="../../images/code/hole_divers/forrest.jpg" alt="Forest scene in Hole Divers">
+                    </figure>
+
+                    <figure class="hole-image-card">
+                        <img src="../../images/code/hole_divers/rabbit.jpg" alt="Rabbit screenshot in Hole Divers">
+                    </figure>
+
+                    <figure class="hole-image-card">
+                        <video
+                            src="../../videos/portal.mp4"
+                            poster="../../images/code/hole_divers/portal.jpg"
+                            autoplay
+                            muted
+                            loop
+                            playsinline>
+                        </video>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Crosshair-Free Pickup System</span>
+                    <span class="de" hidden>Pickup-System ohne Fadenkreuz</span>
+                </h2>
+
+                <div class="interaction-list">
+                    <article class="interaction-card">
+                        <h3 class="interaction-title">RayCast</h3>
+
+                        <div class="interaction-row">
+                            <div class="interaction-media-pair">
+                                <figure class="interaction-diagram">
+                                    <img src="../../images/code/hole_divers/ray_cast.png" alt="Ray cast pickup diagram">
+                                </figure>
+
+                                <figure class="interaction-screenshot">
+                                    <img src="../../images/code/hole_divers/ray_cast_issue_screenshot.jpg" alt="Ray cast issue screenshot">
+                                </figure>
+                            </div>
+
+                            <article class="detail-card">
+                                <ul class="detail-list">
+                                    <li>
+                                        <span class="en">Too precise without crosshair</span>
+                                        <span class="de" hidden>Ohne Fadenkreuz zu präzise</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Small items are easy to miss</span>
+                                        <span class="de" hidden>Kleine Items werden leicht verfehlt</span>
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </article>
+
+                    <article class="interaction-card">
+                        <h3 class="interaction-title">ShapeCast</h3>
+
+                        <div class="interaction-row">
+                            <div class="interaction-media-pair">
+                                <figure class="interaction-diagram">
+                                    <img src="../../images/code/hole_divers/shape_cast.png" alt="Shape cast pickup diagram">
+                                </figure>
+
+                                <figure class="interaction-screenshot">
+                                    <img src="../../images/code/hole_divers/shape_cast_issue_screenshot.jpg" alt="Shape cast issue screenshot">
+                                </figure>
+                            </div>
+
+                            <article class="detail-card">
+                                <ul class="detail-list">
+                                    <li>
+                                        <span class="en">Easier aiming</span>
+                                        <span class="de" hidden>Besseres Zielen</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Can select the wrong nearby item</span>
+                                        <span class="de" hidden>Kann das falsche nahe Item wählen</span>
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </article>
+
+                    <article class="interaction-card">
+                        <h3 class="interaction-title">Area</h3>
+
+                        <div class="interaction-row">
+                            <div class="interaction-media-pair">
+                                <figure class="interaction-diagram">
+                                    <img src="../../images/code/hole_divers/area.png" alt="Area pickup diagram">
+                                </figure>
+
+                                <figure class="interaction-screenshot">
+                                    <img src="../../images/code/hole_divers/area_working_screenshot.jpg" alt="Area pickup working screenshot">
+                                </figure>
+                            </div>
+
+                            <article class="detail-card featured">
+                                <ul class="detail-list">
+                                    <li>
+                                        <span class="en">Finds all reachable items</span>
+                                        <span class="de" hidden>Findet alle erreichbaren Items</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Chooses the item closest to view direction</span>
+                                        <span class="de" hidden>Wählt das Item nahe der Blickrichtung</span>
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Hole Shader</span>
+                    <span class="de" hidden>Loch-Shader</span>
+                </h2>
+
+                <div class="hole-comparison-grid">
+                    <figure class="hole-comparison-card">
+                        <img src="../../images/code/hole_divers/hole_compressed.jpg" alt="Compressed hole texture artifacts">
+                        <figcaption>
+                            <strong>
+                                <span class="en">Compressed image texture</span>
+                                <span class="de" hidden>Komprimierte Bildtextur</span>
+                            </strong>
+                            <span class="en">
+                                Godot compression created colored artifacts and visible pixels.
+                            </span>
+                            <span class="de" hidden>
+                                Godot-Kompression erzeugte farbige Artefakte und sichtbare Pixel.
+                            </span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="hole-comparison-card">
+                        <img src="../../images/code/hole_divers/final_hole.jpg" alt="Final procedural Godot hole shader">
+                        <figcaption>
+                            <strong>
+                                <span class="en">Procedural shader</span>
+                                <span class="de" hidden>Prozeduraler Shader</span>
+                            </strong>
+                            <span class="en">
+                                Rebuilt with Godot Shading Language, without texture artifacts.
+                            </span>
+                            <span class="de" hidden>
+                                Mit Godot Shading Language neu umgesetzt, ohne Textur-Artefakte.
+                            </span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Technical Notes</span>
+                    <span class="de" hidden>Technische Notizen</span>
+                </h2>
+
+                <div class="compact-card-grid">
+                    <article class="compact-card">
+                        <h3>JSON Crafting</h3>
+                        <p>
+                            <span class="en">Recipes can be changed without rebuilding the game.</span>
+                            <span class="de" hidden>Rezepte können ohne Neubuild geändert werden.</span>
+                        </p>
+                    </article>
+
+                    <article class="compact-card">
+                        <h3>
+                            <span class="en">Metrics</span>
+                            <span class="de" hidden>Metriken</span>
+                        </h3>
+                        <p>
+                            <span class="en">Interaction, dimension changes and crafting results saved as JSON.</span>
+                            <span class="de" hidden>Interaktionen, Dimensionswechsel und Crafting-Ergebnisse als JSON.</span>
+                        </p>
+                    </article>
+
+                    <article class="compact-card">
+                        <h3>
+                            <span class="en">Playtests</span>
+                            <span class="de" hidden>Playtests</span>
+                        </h3>
+                        <p>
+                            <span class="en">9 testers, 100% completion rate, high experimentation.</span>
+                            <span class="de" hidden>9 Tester, 100% Abschlussrate, viel Experimentieren.</span>
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="detail-section">
+                <h2 class="detail-section-title">
+                    <span class="en">Play the Game</span>
+                    <span class="de" hidden>Spiel ausprobieren</span>
+                </h2>
+
+                <div class="detail-actions">
+                    <a class="button primary" href="https://pasterlak.itch.io/hole-divers" target="_blank" rel="noopener noreferrer">
+                        itch.io
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <iframe class="footer-frame" src="../general/footer.html" title="Footer"></iframe>
+    </div>
+
+    <script src="../../js/change_language.js"></script>
+    <script src="../../js/change_language_on_iframes.js"></script>
+</body>
+</html>
