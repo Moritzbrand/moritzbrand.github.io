@@ -6,5 +6,6 @@ body {
         margin: 0;
         color: var(--color_text);
         font-family: Arial, sans-serif;
+        background: var(--color_bg);
             
     }
