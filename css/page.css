@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color_bg);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--color_bg);
+}
