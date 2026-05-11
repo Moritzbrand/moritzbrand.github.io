@@ -1,11 +1,25 @@
 :root {
-        --footer_height: 3cm;
-    }
- 
+    --footer_height: 3cm;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background: var(--color_bg);
+}
+
 body {
-        margin: 0;
-        color: var(--color_text);
-        font-family: Arial, sans-serif;
-        background: var(--color_bg);
-            
-    }
+    margin: 0;
+    min-height: 100vh;
+    color: var(--color_text);
+    font-family: Arial, sans-serif;
+    background: var(--color_bg);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--color_bg);
+}
